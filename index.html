@@ -135,8 +135,8 @@ boxes.forEach((box) => {
             count++
         }
         box.disabled=true;
-        checkwinner();
-        if(count==9){
+        let iswinner= checkwinner();
+        if(count==9&& !iswinner){
             drow();
         }
     });
@@ -171,6 +171,7 @@ const checkwinner=()=>{
             if(pos1val!=""&& pos2val!=""&& pos3val!=""){
                 if(pos1val===pos2val&& pos2val===pos3val){
                     showWinner(pos1val);
+                    return true;
                 }
             }
     }
